@@ -41,6 +41,8 @@ function signupHandler() {
         error.textContent = "";
 
       localStorage.setItem("users", JSON.stringify(userArr));
+
+      window.location.href = "../logedIn/logedIn.html"
     }
   }
 

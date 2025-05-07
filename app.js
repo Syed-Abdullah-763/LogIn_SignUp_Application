@@ -21,17 +21,11 @@ function loginHandler(btn) {
     var userArr = JSON.parse(users);
     var isMatch = false;
 
-    for (var i = 0; i < userArr.length; i++) {
-      if (
-        email.value == userArr[i].email &&
-        password.value == userArr[i].password
-      ) {
+    for (var userObj of userArr) {
+      if (userObj.email == email.value && userObj.password == password.value) {
         isMatch = true;
 
-        btn.innerHTML = `<a href="./logedIn/logedIn.html">LogIn</a>`;
-
-        email.value = "";
-        password.value = "";
+        window.location.href = "./logedIn/logedIn.html";
       }
     }
 
